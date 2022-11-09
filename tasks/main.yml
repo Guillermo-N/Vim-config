@@ -1,2 +1,42 @@
 ---
-# tasks file for skel
+# tasks file for Vim-config
+- name: Do we need to install the package as root??
+  set_fact:
+    install_as_root: false
+  when:  ansible_pkg_mgr == "homebrew"
+- name: Install vim
+  become: "{{ install_as_root }}"
+  package:
+    name: vim
+    state: present
+- name: Create VIM default plug in directory {{ vim_plug_dir }}.
+  file:
+    path: "{{ vim_plug_dir }}"
+    state: directory
+- name: Cloning plugins repositories.
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ vim_plug_dir }}/{{ item.dir }}"
+    single_branch: yes
+    version: "{{ item.version }}"
+  loop: "{{ plugins_repos }}"
+- name: Themes
+  block:
+    - name: Create VIM default theme directory {{ vim_theme_dir }}.
+      file:
+        path: "{{ vim_theme_dir }}"
+        state: directory
+    - name: Cloning themes repositories.
+      git:
+        repo: "{{ item.repo }}"
+        dest: "{{ vim_theme_dir }}/{{ item.dir }}"
+        single_branch: yes
+        version: "{{ item.version }}"
+      loop: "{{ theme_repos }}"
+  when: touch_theme == true
+- name: Copy a new ".vimrc" file into place, backing up the original.
+  ansible.builtin.copy:
+    src: user_vimrc
+    dest: ~/.vimrc
+    backup: yes
+    

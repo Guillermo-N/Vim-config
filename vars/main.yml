@@ -1,2 +1,20 @@
 ---
-# vars file for skel
+# vars file for Vim-config
+plugins_repos:
+  - name: Nerd Tree
+    repo: https://github.com/preservim/nerdtree.git
+    version: 6.10.16
+    dir: nerd-tree
+  - name: Vim Airline
+    repo: https://github.com/vim-airline/vim-airline.git
+    version: v0.11
+    dir: vim-airline
+
+# Set if you want to modify the theme.
+touch_theme: true
+
+theme_repos:
+  - name: Dracula
+    repo: https://github.com/dracula/vim.git
+    version: v2.0.0
+    dir: dracula-theme

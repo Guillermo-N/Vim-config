@@ -1,4 +1,4 @@
-packadd! dracula
+"packadd! dracula
 syntax enable
 colorscheme dracula
 

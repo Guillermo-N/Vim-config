@@ -1,2 +1,10 @@
 ---
-# defaults file for skel
+# defaults file for Vim-config
+
+# Initializing variable to true value.
+install_as_root: true
+
+# Path in which to install the vim plugins.
+vim_plug_dir: ~/.vim/pack/ansible-setup/start/
+
+vim_theme_dir: ~/.vim/pack/themes/start/
