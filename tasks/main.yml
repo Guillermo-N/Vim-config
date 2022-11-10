@@ -33,6 +33,9 @@
         single_branch: yes
         version: "{{ item.version }}"
       loop: "{{ theme_repos }}"
+      notify: 
+        - Onehalf ajustments.
+        - Removing Onehalf parent repo.
   when: touch_theme == true
 - name: Copy a new ".vimrc" file into place, backing up the original.
   ansible.builtin.copy:

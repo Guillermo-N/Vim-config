@@ -1,0 +1,12 @@
+---
+- name: Onehalf ajustments.
+  copy:
+    src: "{{ vim_theme_dir }}/onehalf/vim/"
+    dest: "{{ vim_theme_dir }}/onehalf-theme/"
+    remote_src: true
+  when: theme_repos[1].name == 'Onehalf'
+- name: Removing Onehalf parent repo.
+  file:
+    path: "{{ vim_theme_dir }}/onehalf"
+    state: absent
+  when: theme_repos[1].name == 'Onehalf'

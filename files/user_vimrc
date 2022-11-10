@@ -1,9 +1,20 @@
 "packadd! dracula
 syntax enable
-colorscheme dracula
+
 
 set cursorline
 set number
+set t_Co=256
+syntax enable
+
+colorscheme onehalfdark
+" airline
+"let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+
+
+" Key bindings && shortcuts
 imap jj <ESC>
 map <F2> :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -13,6 +24,3 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " Configuration for ansible files
 autocmd FileType yaml setlocal ai et cuc ts=2 sw=2
-
-
-" vim airline
