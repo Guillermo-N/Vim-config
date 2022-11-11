@@ -8,6 +8,7 @@ set t_Co=256
 syntax enable
 
 colorscheme onehalfdark
+let g:airline_theme='raven'
 " airline
 "let g:airline_theme='onehalfdark'
 " lightline

@@ -22,3 +22,7 @@ theme_repos:
     repo: https://github.com/sonph/onehalf.git
     version: 0.1.3
     dir: onehalf
+  - name: airline-themes
+    repo: https://github.com/vim-airline/vim-airline-themes.git
+    version: master
+    dir: airline-themes
