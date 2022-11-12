@@ -1,7 +1,7 @@
 "packadd! dracula
 syntax enable
 
-
+set backspace=2
 set cursorline
 set number
 set t_Co=256
